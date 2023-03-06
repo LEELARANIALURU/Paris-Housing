@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Paris House Price Predictor</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <div class="img"></div>
+    <div class="heading">
+      <h1>Paris House Price Predictor</h1>
+    </div>
+    <div class="content">
+    <br>
+    <form action="/form/submit" method="post">
+        <label>Area of House:</label>
+        <input type="number" name="area" placeholder="Enter the area of house in Square Metres", style="width:270px" />
+        <br><br>
+        <label>Number of rooms</label>
+        <input type="number" name="rooms" placeholder="Enter the number of rooms", style="width:175px" />
+        <br><br>
+        <p>Does the house have a yard?</p>
+        <input type="radio" name="yard" value=1>
+        <label>Yes</label><br>
+        <input type="radio" name="yard" value=0>
+        <label>No</label><br><br>
+        <p>Does the house have a pool?</p>
+        <input type="radio" name="pool" value=1>
+        <label>Yes</label><br>
+        <input type="radio" name="pool" value=0>
+        <label>No</label><br><br>
+        <label>Number of floors:</label>
+        <input type="number" name="floors" placeholder="Enter the number of floors in building", style="width:270px" />
+        <br><br>
+        <label>On a scale of 1-10, how expensive is the area?:</label>
+        <input type="number" name="expensive" placeholder="1-cheapest, 10-costliest", min="1", max="10", style="width:270px" />
+        <br><br>
+        <label>Number of previous owners:</label>
+        <input type="number" name="prev_owners" min="0", style="width:40px" />
+        <br><br>
+        <label>Year made:</label>
+        <input type="number" name="built" min="1000", style="width:80px" />
+        <br><br>
+        <p>Is the house newly built?</p>
+        <input type="radio" name="new" value=1>
+        <label>Yes</label><br>
+        <input type="radio" name="new" value=0>
+        <label>No</label><br><br>
+        <p>Does the house have a storm protector?</p>
+        <input type="radio" name="storm" value=1>
+        <label>Yes</label><br>
+        <input type="radio" name="storm" value=0>
+        <label>No</label><br><br>
+       <label>Area of Basement:</label>
+        <input type="number" name="besement" placeholder="Enter the area of garage in Square Metres", style="width:270px" />
+        <br><br>
+        <p>Does the house have a storage room?</p>
+        <input type="radio" name="storage" value=1>
+        <label>Yes</label><br>
+        <input type="radio" name="storage" value=0>
+        <label>No</label><br><br>
+        <input type="submit">
+        <br><br>
+        <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+    </form>
+    </div>
+  </body>
+</html>

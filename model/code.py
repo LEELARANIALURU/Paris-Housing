@@ -31,3 +31,17 @@ model.fit(x_train, y_train)
 
 # Prints 99.999957485
 print(model.score(x_test, y_test)*100)
+
+#save the model
+import pickle
+with open('londonHousing.pickle', 'wb') as f:
+    pickle.dump(model, f)
+
+# Save column names
+import json
+columns = {
+    "data_columns": [col.lower() for col in x.columns]
+}
+
+with open('columns.json', 'w') as f:
+    f.write(json.dumps(columns))
