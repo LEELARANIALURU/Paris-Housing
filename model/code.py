@@ -15,7 +15,7 @@ plt.show()
 y = data["price"]
 
 # Dropping the attributes which have least correlation with output
-x = data.drop(["price", "cityCode", "hasGuestRoom"], axis=1)
+x = data.drop(["price", "cityCode", "hasGuestRoom", "attic"], axis=1)
 
 # Splitting dataset
 from sklearn.model_selection import train_test_split
@@ -29,7 +29,7 @@ model = LinearRegression()
 
 model.fit(x_train, y_train)
 
-# Prints 99.999957485
+# Prints 99.99995748190119
 print(model.score(x_test, y_test)*100)
 
 #save the model

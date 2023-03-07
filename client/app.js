@@ -28,17 +28,17 @@
     var expensive = document.getElementByName("expensive");
     var prev_owners = document.getElementByName("prev_owners");
     var built = document.getElementByName("built");
-    var newOrNot = document.getElementById("new");
-    var storm = document.getElementById("storm");
-    var basement = document.getElementById("basement");
-    var storage = document.getElementById("storage");
+    var newOrNot = document.getElementByName("new");
+    var storm = document.getElementByName("storm");
+    var basement = document.getElementByName("basement");
+    var basement = document.getElementByName("garage");
+    var storage = document.getElementByName("storage");
   
     var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
     // var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
   
     $.post(url, {
         sqft: sqft,
-        bhk: bhk,
         rooms: rooms,
         yard: yard.value,
         pool: pool,
@@ -49,6 +49,7 @@
         newOrNot: newOrNot,
         storm: storm,
         basement: basement,
+        garage: garage,
         storage: storage
 
 
