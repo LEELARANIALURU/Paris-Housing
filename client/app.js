@@ -37,10 +37,21 @@
     // var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
   
     $.post(url, {
-        total_sqft: parseFloat(sqft.value),
+        sqft: sqft,
         bhk: bhk,
-        bath: bathrooms,
-        location: location.value
+        rooms: rooms,
+        yard: yard.value,
+        pool: pool,
+        floors: floors,
+        expensive: expensive,
+        prev_owners: prev_owners,
+        built: built,
+        newOrNot: newOrNot,
+        storm: storm,
+        basement: basement,
+        storage: storage
+
+
     },function(data, status) {
         console.log(data.estimated_price);
         estPrice.innerHTML = "<h2>" + data.estimated_price.toString() + " Lakh</h2>";
