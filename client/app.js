@@ -1,19 +1,19 @@
 function onClickedEstimatePrice() {
     console.log("Estimate price button clicked");
-    var area = document.getElementByName("area");
-    var rooms = document.getElementByName("rooms");
-    var yard = document.getElementByName("yard");
-    var pool = document.getElementByName("pool");
-    var floors = document.getElementByName("floors");
-    var expensive = document.getElementByName("expensive");
-    var prev_owners = document.getElementByName("prev_owners");
-    var built = document.getElementByName("built");
-    var newOrNot = document.getElementByName("newOrNot");
-    var storm = document.getElementByName("storm");
-    var basement = document.getElementByName("basement");
-    var garage = document.getElementByName("garage");
-    var storage = document.getElementByName("storage");
-    var estPrice = document.getElementsById("uiEstimatedPrice")
+    var area = document.getElementsByName("area");
+    var rooms = document.getElementsByName("rooms");
+    var yard = document.getElementsByName("yard");
+    var pool = document.getElementsByName("pool");
+    var floors = document.getElementsByName("floors");
+    var expensive = document.getElementsByName("expensive");
+    var prev_owners = document.getElementsByName("prev_owners");
+    var built = document.getElementsByName("built");
+    var newOrNot = document.getElementsByName("newOrNot");
+    var storm = document.getElementsByName("storm");
+    var basement = document.getElementsByName("basement");
+    var garage = document.getElementsByName("garage");
+    var storage = document.getElementsByName("storage");
+    var estPrice = document.getElementById("uiEstimatedPrice")
   
     var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
     // var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
