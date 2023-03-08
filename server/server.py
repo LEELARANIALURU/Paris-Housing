@@ -3,16 +3,7 @@ import util
 
 app = Flask(__name__)
 
-# @app.route('/get_location_names', methods=['GET'])
-# def get_location_names():
-#     response = jsonify({
-#         'locations': util.get_location_names()
-#     })
-#     response.headers.add('Access-Control-Allow-Origin', '*')
-
-#     return response
-
-@app.route('/predict_home_price', methods=['GET', 'POST'])
+@app.route('/predict_home_price', methods=['POST'])
 def predict_home_price():
     sqft = float(request.form['area'])
     rooms = int(request.form['rooms'])
@@ -22,7 +13,7 @@ def predict_home_price():
     expensive = int(request.form['expensive'])
     prev_owners = int(request.form['prev_owners'])
     built = int(request.form['built'])
-    new = int(request.form['new'])
+    newOrNot = int(request.form['newOrNot'])
     storm = int(request.form['storm'])
     basement = int(request.form['basement'])
     garage = int(request.form['garage'])

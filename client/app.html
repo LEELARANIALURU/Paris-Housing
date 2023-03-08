@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Paris House Price Predictor</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="app.css">
   </head>
@@ -12,7 +13,7 @@
     </div>
     <div class="content">
     <br>
-    <form action="/form/submit" method="post">
+    <form class="form">
         <label>Area of House:</label>
         <input type="number" name="area" placeholder="Enter the area of house in Square Metres", style="width:260px" />
         <br><br>
@@ -42,9 +43,9 @@
         <input type="number" name="built" min="1000", style="width:80px" />
         <br><br>
         <p>Is the house newly built?</p>
-        <input type="radio" name="new" value=1>
+        <input type="radio" name="newOrNot" value=1>
         <label>Yes</label><br>
-        <input type="radio" name="new" value=0>
+        <input type="radio" name="newOrNot" value=0>
         <label>No</label><br><br>
         <p>Does the house have a storm protector?</p>
         <input type="radio" name="storm" value=1>
@@ -52,7 +53,7 @@
         <input type="radio" name="storm" value=0>
         <label>No</label><br><br>
        <label>Area of Basement:</label>
-        <input type="number" name="basement" placeholder="Enter the area of garage in Square Metres", style="width:265px" />
+        <input type="number" name="basement" placeholder="Enter the area of basement in Square Metres", style="width:265px" />
         <br><br>
         <label>Area of Garage:</label>
         <input type="number" name="garage" placeholder="Enter the area of garage in Square Metres", style="width:265px" />
@@ -64,9 +65,11 @@
         <label>No</label><br><br>
         <!-- <input type="submit"> -->
         <button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
-    </form>
+
     </div>
-    <div class="result">	<h2></h2> </div>
+</form>
+    <div id="uiEstimatedPrice" class="result">
+                <h2></h2> </div>
     <br>
   </body>
 </html>
