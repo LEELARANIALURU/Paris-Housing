@@ -1,11 +1,13 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import util
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/predict_home_price', methods=['GET', 'POST'])
 def predict_home_price():
-    area = float(request.form['area'])
+    area = int(request.form['area'])
     rooms = int(request.form['rooms'])
     yard = int(request.form['yard'])
     pool = int(request.form['pool'])
@@ -20,7 +22,7 @@ def predict_home_price():
     storage = int(request.form['storage'])
 
     response = jsonify({
-        'estimated_price': util.get_estimated_price(area, rooms, yard, pool, floors, expensive, prev_owners, built, newOrNot, storm, basement, garage, storage)
+        'estPrice': util.get_estimated_price(area, rooms, yard, pool, floors, expensive, prev_owners, built, newOrNot, storm, basement, garage, storage)
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
 

@@ -3,10 +3,10 @@ import numpy as np
 
 __model = None
 
-def get_estimated_price(sqft, rooms, yard, pool, floors, expensive, prev_owners, built, newOrNot, storm, basement, garage, storage):
+def get_estimated_price(area, rooms, yard, pool, floors, expensive, prev_owners, built, newOrNot, storm, basement, garage, storage):
 
     x = np.zeros(13)
-    x[0] = sqft
+    x[0] = area
     x[1] = rooms
     x[2] = yard
     x[3] = pool
