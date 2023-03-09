@@ -31,12 +31,13 @@
 }
 
 .result{
-  background: #dcd686;
+  background: #eeede8;
+  color: black;
   width: 20%;
   border: 10;
   margin: 25px 600px 10px;
   box-sizing: border-box;
-  font-size: 15px;
+  font-size: 35px;
   height: 55px;
   text-align: center;
 }

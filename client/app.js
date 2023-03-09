@@ -1,5 +1,13 @@
+
 function onClickedEstimatePrice() {
+
+    var url = "http://127.0.0.1:5000/predict_home_price";
+    // $.get(url, function(data, status){
+    //     alert("Welcome");
+    //   });
+
     console.log("Estimate price button clicked");
+    
     var area = document.getElementsByName("area");
     var rooms = document.getElementsByName("rooms");
     var yard = document.getElementsByName("yard");
@@ -13,33 +21,43 @@ function onClickedEstimatePrice() {
     var basement = document.getElementsByName("basement");
     var garage = document.getElementsByName("garage");
     var storage = document.getElementsByName("storage");
-    var estPrice = document.getElementById("uiEstimatedPrice")
-  
-    var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx which is first 7 tutorials
+    var estPrice = document.getElementById("uiEstimatedPrice");
+    //var url = "http://127.0.0.1:5000/predict_home_price";
+     //Use this if you are NOT using nginx which is first 7 tutorials
     // var url = "/api/predict_home_price"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
-  
+    
     $.post(url, {
-        area: area,
-        rooms: rooms,
-        yard: yard,
-        pool: pool,
-        floors: floors,
-        expensive: expensive,
-        prev_owners: prev_owners,
-        built: built,
-        newOrNot: newOrNot,
-        storm: storm,
-        basement: basement,
-        garage: garage,
-        storage: storage
-
+        area: area.value,
+        rooms: rooms.value,
+        yard: yard.value,
+        pool: pool.value,
+        floors: floors.value,
+        expensive: expensive.value,
+        prev_owners: prev_owners.value,
+        built: built.value,
+        newOrNot: newOrNot.value,
+        storm: storm.value,
+        basement: basement.value,
+        garage: garage.value,
+        storage: storage.value
 
     },function(data, status) {
         console.log(data.estimated_price);
         estPrice.innerHTML = "<h2>" + data.estimated_price.toString() + " Lakh</h2>";
         console.log(status);
     });
+
+    // $.get(url, function(data, status){
+    //     alert("Estimated price is: " + data.estimated_price.toString() + "\nStatus: " + status);
+    //   });
   }
+  
+    // $("body").on('click', 'button', function(){
+    //   $.get(url, function(data, status){
+    //     alert("Estimated price is: " + data.estimated_price.toString() + "\nStatus: " + status);
+    //   });
+    // });
+
 
   // function onPageLoad() {
   //   console.log( "document loaded" );
