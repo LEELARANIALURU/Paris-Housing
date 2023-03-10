@@ -2,10 +2,10 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import util
 
-app = Flask(__name__)
-CORS(app)
+application = Flask(__name__)
+CORS(application)
 
-@app.route('/predict_home_price', methods=['GET', 'POST'])
+@application.route('/predict_home_price', methods=['GET', 'POST'])
 def predict_home_price():
     area = int(request.form['area'])
     rooms = int(request.form['rooms'])
@@ -31,4 +31,4 @@ def predict_home_price():
 if __name__ == "__main__":
     print("Starting Python Flask Server For Home Price Prediction...")
     util.load_saved_artifacts()
-    app.run()
+    application.run()
